@@ -1,0 +1,1 @@
+echo "TIME,POM_5V_GPU_cur" > stats/stats_metaarch_channelsc_run.csv && tegrastats --interval 1 | while read a; do echo $(($(date +%s%N)/1000000)) $a | awk -F "[/ ]" '{OFS=","}{print $1,$28}' >> stats/stats_metaarch_channelsc_run.csv; done
